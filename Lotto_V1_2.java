@@ -28,6 +28,10 @@ public class Lotto_V1_2
        playerNumbers[0] = getPlayerNumbers(playerName[0]); 
        
        System.out.printf("\n%s:\t%s",playerName[0],playerNumbers[0]);
+       
+       String[] jackPotNumbers = generateWinningNumbers();
+       
+       
     } 
     
     public static String getPlayerNumbers(String nameOfPlayer)
@@ -48,7 +52,17 @@ public class Lotto_V1_2
     
     public static String[] generateWinningNumbers()
     {
+        Random randomNumbers = new Random();
+        int[] numbers = new int[4];
+        String[] winningNumbers = new String[4];
         
+        for (int i = 0;i < 4;i++)
+        {
+            numbers[i] = 1 + randomNumbers.nextInt(20);
+            winningNumbers[i] = Integer.toString(numbers[i]);
+        }
+        
+        return winningNumbers;
     }
     
     public static void getJackpotWinners()
