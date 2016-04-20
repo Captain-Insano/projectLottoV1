@@ -97,9 +97,17 @@ public class Lotto_V1_3
         
     }
     
-    public static void getJackpotWinners()
+    public static void getJackpotWinners(int[] numbersPlayer,int[] winningNumbers)
     {
-        
+        for (int x=0; x<winningNumbers.length;x++);
+        {
+            if (numbersPlayer[x]===winningNumbers[x])
+            {
+            System.out.printf("\n Does this work? \t");
+            }
+            else{
+            }
+        }
     }
     
     public static void getMatch3Winners()
