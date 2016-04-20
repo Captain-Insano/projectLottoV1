@@ -14,10 +14,10 @@ Player(s) who match 4 numbers  share the Jackpot
 Player(s) who match 3 numbers  get a consolation €50 each
 
 Version 1 (30 %)   Basic version - One sample run of the Lotto game.
-a) Lotto Jackpot amount entered by user.
-b) Player names and numbers are stored directly in arrays in the code – display names & values.
-c) Winning random numbers generated – display them, sorted.
-d) Display a particular player’s numbers.
+a)* Lotto Jackpot amount entered by user.
+b)* Player names and numbers are stored directly in arrays in the code – display names & values.
+c)* Winning random numbers generated – display them, sorted.
+d)* Display a particular player’s numbers.
 e) Identify any Jackpot winner(s).
 f) Identfy any Match 3 winner(s).
 g) Display the players’ names that are longer than 10 characters.

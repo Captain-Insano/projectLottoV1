@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Lotto_V1_2
+public class Lotto_V1_2COMMENTED
 {
     public static void main(String args[])
     {
@@ -38,6 +38,8 @@ public class Lotto_V1_2
        
        // Stores the random numbers returned from the generateWinningNumbers method in jackPotNumbers[]
        int[] jackPotNumbers = generateWinningNumbers();
+       
+       getJackpotWinners(playerNumbers,jackPotNumbers);
       
     } 
     
@@ -57,6 +59,8 @@ public class Lotto_V1_2
         
         // Returns the numbers array
         return numbers;
+        
+        
     }
     
     public static int[] generateWinningNumbers()
@@ -74,9 +78,17 @@ public class Lotto_V1_2
         return winningNumbers;
     }
     
-    public static void getJackpotWinners()
+    public static void getJackpotWinners(int[] numbersPlayer,int[] winningNumbers)
     {
-        
+        for (int x=0; x<winningNumbers.length;x++);
+        {
+            if (numbersPlayer[x]===winningNumbers[x])
+            {
+            System.out.printf("\n Does this work? \t");
+            }
+            else{
+            }
+        }
     }
     
     public static void getMatch3Winners()
