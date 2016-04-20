@@ -103,7 +103,7 @@ public class Lotto_V1_3
         {
             if (numbersPlayer[x]===winningNumbers[x])
             {
-            System.out.printf("\n Does this work? \t");
+            System.out.printf("\n Winner \t");
             }
             else{
             }
