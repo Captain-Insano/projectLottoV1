@@ -15,6 +15,7 @@ public class Lotto_V4
     {
         int lottoAmount = 0;
         int runs = 0;
+        int [] barChart = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};;
         String temp ="";
         Scanner keyboard = new Scanner(System.in);
        
@@ -70,7 +71,10 @@ public class Lotto_V4
             }
 
            // Stores the random numbers returned from the generateWinningNumbers method in jackPotNumbers[]
-           int[] jackPotNumbers = generateWinningNumbers();
+           int [] jackPotNumbers = generateWinningNumbers();
+           
+           // This method stores the winning numbers in another array to be used in a bar chart later
+           barChart = getBarChart(jackPotNumbers, barChart);
 
            // Outputs the Winning Numbers
            System.out.printf("\nWinning Numbers:\t");
@@ -79,26 +83,11 @@ public class Lotto_V4
                System.out.printf("\t%d",jackPotNumbers[i]);
            }
         }
+        // Method which displays the random numbers
+        displayBarChart(barChart);
     } 
     
-    public static String[] getPlayerNames()
-    {
-        int totalPlayers = 0;
-        Scanner keyboard = new Scanner(System.in);
-        
-        System.out.printf("How Many Players would like to play?:\t");
-        totalPlayers = keyboard.nextInt();
-        String[] pNames = new String[totalPlayers];
-        
-        for (int i = 0;i < pNames.length;i++)
-        {
-            System.out.printf("Enter a Player Name:\t");
-            keyboard.nextLine();
-            pNames[i] = keyboard.next();
-        }
-        return pNames;
-    }
-    
+
     public static int[][] getPlayerNumbers(String[] nameOfPlayer)
     {
         Scanner keyboard = new Scanner(System.in);
@@ -149,7 +138,7 @@ public class Lotto_V4
                 System.out.printf("%d\t", numbers[i][j]);
             }
             // Gets players choice on whether or not they want to change numbers
-            System.out.printf("\nY/N");
+            System.out.printf("\nY/N:\t");
             choice = keyboard.next();
             choice = choice.toLowerCase();
             if ((choice.equals("n"))||(choice.equals("no")))
@@ -228,4 +217,57 @@ public class Lotto_V4
     {
     
     }
+    
+    // Enhancement 1
+    public static int[] getBarChart(int[] finalNumbers, int[] Chart)
+    {
+        int[] numbersTotal = new int[20];
+        
+        for (int i = 0; i < finalNumbers.length; i++)
+        {
+            numbersTotal[finalNumbers[i] - 1]++;
+        }
+        
+        for (int i = 0; i < Chart.length; i++)
+        {
+            Chart[i] = Chart[i] + numbersTotal[i];
+        }
+        return Chart;
+        
+    }
+    
+    public static void displayBarChart(int[] starChart)
+    {
+        System.out.printf("\n\n");
+        // Outputs each number followed by an astrisk, which represent whether or not the number was generated as a winning number
+        for (int i = 0; i < starChart.length; i++)
+        {
+            System.out.printf("%d\t",i + 1);
+            for (int x = 0; x < starChart[i];x++)
+            {
+                System.out.printf("*");
+            }
+            System.out.printf("\n");
+        }
+    }
+    // Enhancement 2
+    public static String[] getPlayerNames()
+    {
+        int totalPlayers = 0;
+        Scanner keyboard = new Scanner(System.in);
+        
+        // Gets the user to input the total number os player playing
+        System.out.printf("How Many Players would like to play?:\t");
+        totalPlayers = keyboard.nextInt();
+        String[] pNames = new String[totalPlayers];
+        
+        for (int i = 0;i < pNames.length;i++)
+        {
+            System.out.printf("Enter a Player Name:\t");
+            keyboard.nextLine();
+            pNames[i] = keyboard.next();
+        }
+        return pNames;
+    }
 }
+    
