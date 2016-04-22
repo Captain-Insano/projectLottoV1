@@ -99,7 +99,8 @@ public class Lotto_V1_3
     
     public static void getJackpotWinners(int[] numbersPlayer,int[] winningNumbers)
     {
-
+        //Tests if the two arrays are equal or not
+        
         if (Arrays.equals(numbersPlayer,winningNumbers))
         {
             System.out.printf("\n Winner \t");
@@ -111,7 +112,8 @@ public class Lotto_V1_3
     
     public static void getMatch3Winners(int[] numbersPlayer,int[] winningNumbers)
     {
-      int tally=0;
+      int tally=0;//Counts the number of times the player has a matching number,
+      //and displays if they won.
       
         for (int x =0;x<winningNumbers.length;x++)
         {
