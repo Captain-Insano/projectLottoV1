@@ -60,7 +60,7 @@ public class Lotto_V4
             int[][] playerNumbers = getPlayerNumbers(playerName); 
 
             // Outputs the players name and numbers  
-            for (int i = 0;i < playerNumbers.length;i++)
+            for (int i = 0;i < playerName.length;i++)
             {
                 System.out.printf("\n%s:\t\t",playerName[i]);
                 for (int j = 0;j < 4;j++)
