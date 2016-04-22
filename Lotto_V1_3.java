@@ -99,19 +99,30 @@ public class Lotto_V1_3
     
     public static void getJackpotWinners(int[] numbersPlayer,int[] winningNumbers)
     {
-        for (int x=0; x<winningNumbers.length;x++);
+
+        if (Arrays.equals(numbersPlayer,winningNumbers))
         {
-            if (numbersPlayer[x]===winningNumbers[x])
-            {
             System.out.printf("\n Winner \t");
-            }
-            else{
-            }
+        }
+        else{
+            System.out.printf("\nYou lose");
         }
     }
     
-    public static void getMatch3Winners()
+    public static void getMatch3Winners(int[] numbersPlayer,int[] winningNumbers)
     {
-    
+      int tally=0;
+      
+        for (int x =0;x<winningNumbers.length;x++)
+        {
+            if(numbersPlayer[x]==winningNumbers[x])
+            {
+            tally++;
+            }
+            if(tally>=3)
+            {
+                System.out.printf("\nYou have matched "+tally+" numbers. Congrats");
+            }
+        }
     }
 }
