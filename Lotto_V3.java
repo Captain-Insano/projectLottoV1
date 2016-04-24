@@ -13,6 +13,7 @@ public class Lotto_V3
 {
     public static void main(String args[])
     {
+        checkPass()
         String[] playerName = {"Zebra","Apple"};
         int lottoAmount = 0;
         int runs = 0;
@@ -201,13 +202,101 @@ public class Lotto_V3
         
     }
     
-    public static void getJackpotWinners()
+   public static void getJackpotWinners(int[] numbersPlayer,int[] winningNumbers)
     {
+        //Tests if the two arrays are equal or not
         
+        if (Arrays.equals(numbersPlayer,winningNumbers))
+        {
+            System.out.printf("\n Winner \t");
+        }
+        else{
+            System.out.printf("\nYou lose");
+        }
     }
     
-    public static void getMatch3Winners()
+    public static void getMatch3Winners(int[] numbersPlayer,int[] winningNumbers)
     {
-    
+      int tally=0;//Counts the number of times the player has a matching number,
+      //and displays if they won.
+      
+        for (int x =0;x<winningNumbers.length;x++)
+        {
+            if(numbersPlayer[x]==winningNumbers[x])
+            {
+            tally++;
+            }
+            if(tally>=3)
+            {
+                System.out.printf("\nYou have matched "+tally+" numbers. Congrats");
+            }
+        }
     }
+    
+    public static int countContainChar(String [] playerName, char checkChar) {
+
+        int countElements = 0;
+        
+        for (int i = 0; i < playerName.length; i++) {
+            if (playerName[i].indexOf(checkChar) != -1) {
+                    countElements++;
+                }
+            }       
+        return countElements;
+    }
+    public static String showMenu(String [] playerName, String checkString) {
+        String menu="";
+        
+        
+        return menu;
+    }
+    public static void getMatch4Winners(int[] numbersPlayer,int[] winningNumbers)
+    {
+      int tally=0;//Counts the number of times the player has a matching number,
+      //and displays if they won.
+      
+        for (int x =0;x<winningNumbers.length;x++)
+        {
+            if(numbersPlayer[x]==winningNumbers[x])
+            {
+            tally++;
+            }
+            if(tally>=4)
+            {
+                System.out.printf("\nYou have matched "+tally+" numbers. Congrats");
+            }
+        }
+    }
+    public static void getNoWinners(int[] numbersPlayer,int[] winningNumbers,double lottoAmount)
+    {
+        int tally=0;//Counts the number of times the player has a matching number,
+      //and displays if they won.
+      
+        for (int x =0;x<winningNumbers.length;x++)
+        {
+        if(numbersPlayer[x]==winningNumbers[x])
+        {
+            break;
+            }
+            else{
+                lottoAmount=lottoAmount*1.1;
+            }
+        }
+    }
+    public static void checkPass(double lottoAmount)
+    {
+    Scanner keyboard = new Scanner(System.in);
+    String password ="P4ssw0rd";
+    String checkPass;
+    System.out.printf("\n Admin Password \t");
+    checkPass= keyboard.next();
+        if(password==checkPass)
+        {
+            System.out.printf("\n Password Accepted \t");
+        }
+        else{
+        
+        }
+    }
+    
 }

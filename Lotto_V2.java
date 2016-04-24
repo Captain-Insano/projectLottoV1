@@ -70,6 +70,11 @@ public class Lotto_V2
            System.out.printf("\t%d",jackPotNumbers[i]);
        }
        
+       int countChars = 0;
+       char character = 'r';
+
+       countChars = countContainChar (playerName, character);
+       
     } 
     
     public static int[][] getPlayerNumbers(String[] nameOfPlayer)
@@ -206,4 +211,32 @@ public class Lotto_V2
             }
         }
     }
+    
+    public static int countContainChar(String [] playerName, char checkChar) {
+
+        int countElements = 0;
+        
+        for (int i = 0; i < playerName.length; i++) {
+            if (playerName[i].indexOf(checkChar) != -1) {
+                    countElements++;
+                }
+            }       
+        return countElements;
+    }
+    
+    public static int countContainString(String [] playerName, String checkString) {
+
+        int countStrings = 0;
+        
+        for (int i = 0; i < playerName.length; i++) {
+            if (playerName[i].indexOf(checkString) != -1) {
+                    countStrings++;
+                }
+            }       
+        return countStrings;
+    }
+    public static int showMenu(String [] playerName, String checkString) {
+        
+    }
+    
 }
