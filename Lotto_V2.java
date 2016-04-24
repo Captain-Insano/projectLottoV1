@@ -176,13 +176,34 @@ public class Lotto_V2
         
     }
     
-    public static void getJackpotWinners()
+    public static void getJackpotWinners(int[] numbersPlayer,int[] winningNumbers)
     {
+        //Tests if the two arrays are equal or not
         
+        if (Arrays.equals(numbersPlayer,winningNumbers))
+        {
+            System.out.printf("\n Winner \t");
+        }
+        else{
+            System.out.printf("\nYou lose");
+        }
     }
     
-    public static void getMatch3Winners()
+    public static void getMatch3Winners(int[] numbersPlayer,int[] winningNumbers)
     {
-    
+      int tally=0;//Counts the number of times the player has a matching number,
+      //and displays if they won.
+      
+        for (int x =0;x<winningNumbers.length;x++)
+        {
+            if(numbersPlayer[x]==winningNumbers[x])
+            {
+            tally++;
+            }
+            if(tally>=3)
+            {
+                System.out.printf("\nYou have matched "+tally+" numbers. Congrats");
+            }
+        }
     }
 }
